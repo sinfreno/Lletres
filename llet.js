@@ -34,22 +34,22 @@ for (i = 0; i < tam ; i++){
     }
 }
 
-// fase 3:
-let repe = nombre;
-const parejas = repe.map(function(x){
-    let y = 0;
-    for(i = 0; i < tam; i++){
-        if( x == repe[i]){
-            y++;
+//  Fase 3:
+    
+    // Creo un Map vacío
+    var nommap = new Map();
+    
+    for (var i = 0; i < tam; i++){
+        
+      // Si el nommap tiene esa letra, se le suma 1 
+      if(nommap.has(nombre[i]) == true){
+          nommap.set(nombre[i], nommap.get(nombre[i]) + 1);
+        //  Si esa letra no está en el Map, se añade con valor 1
+        }else{
+            nommap.set(nombre[i], 1);
         }
-    }
-
-    return  [x, y];
-});
-console.log(parejas);
-
-
-
+    }        
+    console.log(nommap);
 
 
 // Fase 4:
